@@ -1,0 +1,29 @@
+<html>
+<body>
+<center>
+    <div>Imię</div><br>
+    <input type="text" id="name"/><br>
+    <div>Prezent</div><br>
+    <input type="text" id="gift"/><br>
+    <button onclick="addGift()">Dodaj do listy</button><br>
+    <button onclick="generate()">Utwórz kartkę</button><br>
+    <ul id="giftList">
+      
+    </ul>
+</center>
+<script type="text/javascript">
+    function addGift()
+    {
+        if(document.getElementById("gift").value == "")
+        {
+          return;
+        }
+        activity.addGift(document.getElementById("gift").value);
+    }
+    function generate()
+    {
+        activity.generate(document.getElementById("name").value);
+    }
+</script>
+</body>
+</html>
