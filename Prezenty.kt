@@ -8,6 +8,9 @@ import android.widget.Toast
 import java.util.*
 
 class Prezenty : AppCompatActivity() {
+    var giftList = ArrayList<String>()
+    var name = ""
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,5 +39,16 @@ class Prezenty : AppCompatActivity() {
     @JavascriptInterface
     fun getDate(): String {
         return Date().toString()
+    }
+
+    @JavascriptInterface
+    fun addGift(gift: String) {
+        giftList.add(gift)
+    }
+
+    @JavascriptInterface
+    fun generate(setname: String) {
+        name = setname
+        
     }
 }
