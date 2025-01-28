@@ -9,7 +9,6 @@ import java.util.*
 
 class Prezenty : AppCompatActivity() {
     var giftList = ArrayList<String>()
-    var name = ""
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,24 +30,20 @@ class Prezenty : AppCompatActivity() {
         setContentView(page)
     }
 
-    @JavascriptInterface //adnotacja sygnalizujaca ze metoda bedzie dostepna z poziomu JS
-    fun sayHello(name: String) {
-        Toast.makeText(this, name, Toast.LENGTH_SHORT).show()
-    }
-
-    @JavascriptInterface
-    fun getDate(): String {
-        return Date().toString()
-    }
-
     @JavascriptInterface
     fun addGift(gift: String) {
         giftList.add(gift)
     }
 
     @JavascriptInterface
-    fun generate(setname: String) {
-        name = setname
-        
+    fun generate(name: String) {
+        val intent = Intent(this, Kartka::class.java)
+        intent.putExtra("name", name)
+        var gifts = ""
+        for (gift in giftList) {
+            gifts += "$gift<br>" // Append each item followed by a space
+        }
+        intent.putExtra("giftList", gifts)
+        startActivity(intent)
     }
 }
