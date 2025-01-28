@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image with Positioned Overlay Text</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 90%;
+            height: 90%;
+            ;object-fit: cover; /* Ensures the image covers the entire container */
+        }
+
+        .text-element {
+            position: absolute;
+            color: black;
+            font-size: 1.5rem;
+            ;text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Example positions */
+        .text-1 {
+            top: 20%;
+            left: 25%;
+        }
+
+        .text-2 {
+            top: 30%;
+            left: 25%;
+            ;transform: translate(-50%, -50%); /* Center this specific text */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="your-image.jpg" alt="Background" class="background-image">
+        <!-- Text elements with customizable positions -->
+        <div class="text-element text-1">John Doe</div>
+        <div class="text-element text-2">Gift1<br>Gift2</div>
+    </div>
+    <script>  
+        // Self-running function (IIFE)
+        (function funcJS() {
+            console.log('funcJS() executed automatically!');
+            const result = activity.getName();
+            document.getElementById("name").innerHTML = result;
+            const result2 = activity.getGifts();
+            document.getElementById("gifts").innerHTML = result2;
+        })();
+    </script>
+</body>
+</html>
