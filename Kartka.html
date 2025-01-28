@@ -58,11 +58,8 @@
     <script>  
         // Self-running function (IIFE)
         (function funcJS() {
-            console.log('funcJS() executed automatically!');
-            const result = activity.getName();
-            document.getElementById("name").innerHTML = result;
-            const result2 = activity.getGifts();
-            document.getElementById("gifts").innerHTML = result2;
+            document.getElementById("name").innerHTML = activity.getName();
+            document.getElementById("gifts").innerHTML = activity.getGifts();
         })();
     </script>
 </body>
